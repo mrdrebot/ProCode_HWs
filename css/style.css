@@ -1,0 +1,7 @@
+body {
+	background-image: url("../images/background-image.jpg");
+	background-size: 40%;
+}
+h1, h2 {
+	text-align: center
+}
