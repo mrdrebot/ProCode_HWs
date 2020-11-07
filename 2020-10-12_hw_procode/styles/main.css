@@ -1,0 +1,42 @@
+div {
+    margin: 50px auto;
+    width: 80%;
+    height: 100px;
+}
+
+
+div:first-child {
+    background:linear-gradient(-45deg, transparent 35px, aqua 0) bottom right, linear-gradient(45deg, transparent 35px, aqua 0) bottom left, linear-gradient(-135deg, transparent 35px, aqua 0) top right,linear-gradient(135deg, transparent 35px, aqua 0) top left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+div:nth-child(2) {
+    background:linear-gradient(-45deg, transparent 35px, yellow 0) bottom right, linear-gradient(45deg, transparent 35px, yellow 0) bottom left, linear-gradient(-135deg, transparent 35px, yellow 0) top right,linear-gradient(135deg, transparent 35px, yellow 0) top left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+div:nth-child(2) {
+    background:linear-gradient(-45deg, transparent 35px, yellow 0) bottom right, linear-gradient(45deg, transparent 35px, yellow 0) bottom left, linear-gradient(-135deg, transparent 35px, yellow 0) top right,linear-gradient(135deg, transparent 35px, yellow 0) top left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+div:nth-child(3) {
+    background:linear-gradient(-45deg, transparent 35px, red 0) bottom right, linear-gradient(45deg, transparent 35px, red 0) bottom left, linear-gradient(-135deg, transparent 35px, red 0) top right,linear-gradient(135deg, transparent 35px, red 0) top left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+div:nth-child(4) {
+    background:linear-gradient(-45deg, transparent 35px, black 0) bottom right, linear-gradient(45deg, transparent 35px, black 0) bottom left, linear-gradient(-135deg, transparent 35px, black 0) top right,linear-gradient(135deg, transparent 35px, black 0) top left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+div:last-child {
+    background:linear-gradient(-45deg, transparent 35px, green 0) bottom right, linear-gradient(45deg, transparent 35px, green 0) bottom left, linear-gradient(-135deg, transparent 35px, green 0) top right,linear-gradient(135deg, transparent 35px, green 0) top left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+} */

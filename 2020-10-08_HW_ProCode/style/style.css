@@ -1,0 +1,13 @@
+button {
+    height: 45px;
+    width: 120px;
+    border-radius: 5px;
+    border-width: 1px;
+    background: linear-gradient(45deg, red, #d1c5e8);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+button:active {
+    background: linear-gradient(45deg, #0400ff, #e8e3c5);
+    box-shadow: none;
+}

@@ -1,0 +1,42 @@
+div, li {
+    height: 40px;
+    width: 100px;
+    border: 2px solid black;
+    text-align: center;
+    background-color: blanchedalmond;  
+}
+
+div {
+    margin-bottom: 2px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-left: 2px;
+    list-style-type: none;
+}
+
+.menu-1 {
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+.menu-2 {
+    position: absolute;
+    top: -2px;
+    left: 102px;
+    display: none;
+}
+
+.menu-1:hover > .menu-2 {
+    display: block;
+}
+
+.menu-2 > li:first-child ~ li {
+    border-top: none;
+}
