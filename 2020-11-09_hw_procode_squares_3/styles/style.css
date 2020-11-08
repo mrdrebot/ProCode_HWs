@@ -1,0 +1,21 @@
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 560px;
+  height: 420px;
+  margin: 50px auto;
+  border: 1px solid red;
+  background-color: white;
+  overflow: hidden;
+}
+
+main div {
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+  background-color: yellow;
+}
+/*# sourceMappingURL=style.css.map */
