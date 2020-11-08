@@ -4,18 +4,11 @@ main {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 560px;
-  height: 420px;
+  width: 210px;
+  height: 350px;
   margin: 50px auto;
   border: 1px solid red;
   background-color: white;
-  overflow: hidden;
-}
-
-main div {
-  height: 50px;
-  width: 50px;
-  margin: 10px;
-  background-color: yellow;
+  background-image: url(../images/square.png);
 }
 /*# sourceMappingURL=style.css.map */

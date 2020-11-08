@@ -1,21 +1,14 @@
-$squere_side: 50px;
-$row_namber: 6;
-$column_number: 8;
+$square_side: 50px;
+$row_namber: 5;
+$column_number: 3;
 
 main {
     display: flex;
     flex-wrap: wrap;
-    width: ($squere_side * $column_number) + (10px * $column_number * 2);
-    height: ($squere_side * $row_namber) + (10px * $row_namber * 2);
+    width: ($square_side * $column_number) + (10px * $column_number * 2);
+    height: ($square_side * $row_namber) + (10px * $row_namber * 2);
     margin: 50px auto;
     border: 1px solid red;
     background-color: white;
-    overflow: hidden;
-
-    div {
-        height: $squere_side;
-        width: $squere_side;
-        margin: 10px;
-        background-color: yellow;
-    }
+    background-image: url(../images/square.png);
 }
