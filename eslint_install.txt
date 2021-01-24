@@ -1,0 +1,16 @@
+npm i eslint-config-airbnb
+
+npm i babel-eslint
+
+npm i eslint --save-dev
+
+npm i eslint-plugin-import
+
+npm i react
+
+npm i eslint-plugin-react
+
+npm i eslint-plugin-react-hooks
+
+npm i eslint-plugin-jsx-a11y
+
