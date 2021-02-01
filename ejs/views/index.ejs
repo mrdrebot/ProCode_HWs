@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container header">
+      <h1><%= title %></h1>
+      <p>Month <%= month %> in <%= year %></p>
+    </div>
+    <div class="container grid">
+      <%# Создание блоков div календаря %>
+      <% for (i = 1; i < divsNum; i++) { %>
+        <div>
+          <%# Заполнение блоков div текстом%>
+          <% if (i > week.length) { %>
+            <%# Заполнение блоков div текстом, числом дня %>
+            <% if (i >= week.length + firstDayMonth) { %>
+              <%= i - week.length - firstDayMonth + 1 %>
+            <% } %>
+          <% } else { %>
+              <%# Заполнение блоков div текстом, шапка календаря %>
+              <%= week[i - 1] %>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+  </body>
+</html>
