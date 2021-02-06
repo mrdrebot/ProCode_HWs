@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Dog breeds</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <div class="container">
-      <h1><%= title %></h1>
-      <p><%= phrase %></p>
-      <a href="javascript:window.location.reload();">Refresh picture</a>
-      <br>
-      <img src="<%= message  %> " alt="random-dog">
-    </div>
+    <h1><%= title %></h1>
+    <p>Choose dog breed</p>
+    <select>
+      <%# Создание полей выпадающего списка%>
+      <% for (key in breeds) { %>
+        <option value="<%= key %>">
+          <%= key %>
+        </option>
+      <% } %>
+    </select>
+    <br>
+    <br>
+    <%# Отображение тэга <img> %>
+    <% if (breed) { %>
+      <img src="<%= url %>" alt="chosen dog">
+    <% } %>
+    <script src="/javascripts/main.js"></script>
   </body>
 </html>

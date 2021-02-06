@@ -1,11 +1,12 @@
 {
-  "name": "dogs",
+  "name": "cat",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "dog": "node ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
