@@ -1,14 +1,16 @@
 // Поиск нужных элементов
 const selectEl = document.querySelector("select");
-const imgEl = document.querySelector("img");
 
 //  Отслеживание выбора из выпадающего меню, обновление страницы и отображение картинки
 selectEl.addEventListener("change", (e) => {
-    location.replace(`http://127.0.0.1:3000/${e.target.value}`);
+    // location.replace(`http://127.0.0.1:3000/${e.target.value}`);
+    // location.replace(`/${e.target.value}`);
+    location.replace(`${document.location.origin}/${e.target.value}`);
 });
 
 //  Старый вариант, уже не используется, но работает
 
+// const imgEl = document.querySelector("img");
 // let xhr = new XMLHttpRequest();
 // xhr.open('GET', `https://dog.ceo/api/breed/${e.target.value}/images/random`, false);
 // // imgEl.src = `https://dog.ceo/api/breed/${e.target.value}/images/random`;
