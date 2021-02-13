@@ -16,10 +16,10 @@ a {
   width: 105vh;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (15vh)[5];
-      grid-template-rows: repeat(5, 15vh);
-  -ms-grid-columns: (15vh)[7];
-      grid-template-columns: repeat(7, 15vh);
+  -ms-grid-rows: (200px)[5];
+      grid-template-rows: repeat(5, 200px);
+  -ms-grid-columns: (200px)[7];
+      grid-template-columns: repeat(7, 200px);
   grid-gap: 1px;
   margin-top: 10px;
   margin-bottom: 0;
@@ -44,8 +44,8 @@ a {
 .dog-image {
   position: absolute;
   display: none;
-  height: 15vh;
-  width: 15vh;
+  height: 200px;
+  width: 200px;
 }
 
 .show-image {

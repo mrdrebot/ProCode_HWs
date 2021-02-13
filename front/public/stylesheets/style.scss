@@ -15,8 +15,10 @@ body {
   .grid {
     width: 105vh;
     display: grid;
-    grid-template-rows: repeat(5, 15vh);
-    grid-template-columns: repeat(7, 15vh);
+    grid-template-rows: repeat(5, 200px);
+    grid-template-columns: repeat(7, 200px);
+    // grid-template-rows: repeat(5, 15vh);
+    // grid-template-columns: repeat(7, 15vh);
     grid-gap: 1px;
     margin-top: 10px;
     margin-bottom: 0;
@@ -34,8 +36,10 @@ body {
   .dog-image {
     position: absolute;
     display: none;
-    height: 15vh;
-    width: 15vh;
+    height: 200px;
+    width: 200px;
+    // height: 15vh;
+    // width: 15vh;
   }
 
   .show-image {
