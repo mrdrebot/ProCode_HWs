@@ -16,10 +16,20 @@ router.post('/', upload.none(), async (req, res) => {
   // Создаем массив пород котов
   let catsArr = await axios.get(`https://api.thecatapi.com/v1/breeds`);
 
-  // Убираем из массива котов без данных и картинок
-  catsArr = catsArr.data.filter(cat => cat.image !== undefined)
-    .filter(cat => cat.image.url !== undefined)
-    .map(cat => { return { name: cat.name, countryCode: cat.country_code, imageUrl: cat.image.url } });
+  // Ищем url для котов, где его нет
+  catsArr = await Promise.all(catsArr.data
+    .map(async (cat) => {
+      if(cat.image === undefined || cat.image.url === undefined) {
+        // создается обьект для внесения в него отсуутствующего url, если сам объект "image" отсутствует
+        if(cat.image === undefined) cat.image = {};
+        cat.image.url = await axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${cat.id}`)
+        .then(r => r.data[0].url)
+        .catch(err => console.log('Error:', err));
+      }
+
+      return { name: cat.name, countryCode: cat.country_code, imageUrl: cat.image.url };
+    })
+  );
   
   // Ищем котов для каждой страны
   let counriesArr = obj.data.map(country => {
