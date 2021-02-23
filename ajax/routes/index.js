@@ -14,10 +14,10 @@ router.post('/', upload.none(), async (req, res) => {
   // Создаем массив стран из выбраного региона
   const obj = await axios.get(`https://restcountries.eu/rest/v2/region/${req.body.region}`);
   // Создаем массив пород котов
-  let catsArr = await axios.get(`https://api.thecatapi.com/v1/breeds`);
+  const tempCatsArr = await axios.get(`https://api.thecatapi.com/v1/breeds`);
 
   // Ищем url для котов, где его нет
-  catsArr = await Promise.all(catsArr.data
+  const catsArr = await Promise.all(tempCatsArr.data
     .map(async (cat) => {
       if(cat.image === undefined || cat.image.url === undefined) {
         // создается обьект для внесения в него отсуутствующего url, если сам объект "image" отсутствует
@@ -32,12 +32,12 @@ router.post('/', upload.none(), async (req, res) => {
   );
   
   // Ищем котов для каждой страны
-  let counriesArr = obj.data.map(country => {
+  const tempCounriesArr = obj.data.map(country => {
     return { countryName: country.name, flagUrl: country.flag, cats: catsArr.filter(cat => country.alpha2Code === cat.countryCode) };
   });
 
   // Фильтруем полученнный массив, убираем странны в которых нет котов
-  counriesArr = counriesArr.filter(cat => cat.cats.length);
+  const counriesArr = tempCounriesArr.filter(cat => cat.cats.length);
   
   // Создаем обьект для возврата на фронт
   const html = counriesArr.reduce((preVal, curVal) => {
