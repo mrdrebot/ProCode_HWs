@@ -7,14 +7,15 @@ const multer = require('multer');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const data = moment().format('YYYY-MM-DD');
-    fs.stat(`./public/images/${data}`, (err) => {
+    const date = moment().format('YYYY-MM-DD');
+    const filePath = `./public/images/${date}`;
+    fs.stat(filePath, (err) => {
       if (err === null) {
-        cb(null, `./public/images/${data}`);
+        cb(null, filePath);
       }
       else if (err.code === 'ENOENT') {
-        fsProm.mkdir(`./public/images/${data}`)
-        .then(cb(null, `./public/images/${data}`))
+        fsProm.mkdir(filePath)
+        .then(cb(null, filePath))
         .catch(err => console.log(err));
       }
       else {
