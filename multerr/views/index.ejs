@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Enter file name and choose the file</p>
+    <form>
+      <label for="fileName">File name:</label>
+      <input type="text" name="fileName" id="fileName">
+      <br>
+      <br>
+      <label for="file">Download a file:</label>
+      <br>
+      <br>
+      <input type="file" name="file" id="file">
+      <br>
+      <br>
+      <button type="submit">Send</button>
+    </form>
+    <br>
+    <br>
+    <div class="answ"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="/javascripts/main.js"></script>
+  </body>
+</html>
