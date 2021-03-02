@@ -59,5 +59,5 @@ form.addEventListener("submit", function(event) {
       dateEl.value = '';
       articleEl.value = '';
     })
-    .catch(e => answEl.innerHTML = `Server respons error (POST):\n ${e}`);
+    .catch(e => answEl.innerHTML = `Server respons (POST) error:\n ${e}`);
 });
