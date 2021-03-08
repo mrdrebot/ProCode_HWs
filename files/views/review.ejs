@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Choose date to get files:</p>
+    <form enctype="multipart/form-data" method="post" class="review" action="review">
+      <label for="fromDate">from:</label>
+      <br>
+      <br>
+      <input type="date" name="fromDate" id="fromDate">
+      <br>
+      <br>
+      <label for="toDate">to:</label>
+      <br>
+      <br>
+      <input type="date" name="toDate" id="toDate">
+      <br>
+      <br>
+      <button type="submit">Send</button>
+    </form>
+    <br>
+    <br>
+    <ul class="answ"></ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="/javascripts/review.js"></script>
+  </body>
+</html>
