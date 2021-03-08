@@ -5,7 +5,6 @@ const fsProm = require('fs/promises');
 const moment = require('moment');
 const multer = require('multer');
 const upload = multer();
-const zlib = require("zlib");
 const JSZip = require("jszip");
 const path = require("path");
 
@@ -37,7 +36,29 @@ router.post('/', upload.none(), async function(req, res, next) {
         return str = `${str}<li>${file.name} | ${file.size} bite | ${moment(file.date).format('YYYY-MM-DD')}</li>`;
     }, '');
 
-    res.send(`${strToFront}`);
+    // res.send(`${strToFront}<br><a href="./uploads/filesArchiv.zip" download>Download files arсhiv</a>`);
+    res.send(`${strToFront}<br><a href="./review/uploads/filesArchiv.zip" download>Download files arсhiv</a>`);
 });
+
+// Отправка пути для скачивния файла
+router.get(`/:folder1/:file.zip`, async function(req, res) {
+    const filesInFolderArr = await fsProm.readdir(`./${req.params.folder1}`);
+
+    const zip = new JSZip();
+    
+    filesInFolderArr.forEach((file) => {
+        const readStream = fs.createReadStream(`./${req.params.folder1}/${file}`);
+        zip.file(file, readStream);
+    });
+
+    // Создание архива zip
+    zip
+    .generateNodeStream({type:'nodebuffer', streamFiles:true})
+    .pipe(fs.createWriteStream(`./${req.params.folder1}/filesArchiv.zip`))
+    .on('finish', function () {
+        console.log("Archiv file created!");
+        res.sendFile(path.join(__dirname, `../${req.params.folder1}/filesArchiv.zip`));
+    });
+  });
 
 module.exports = router;
